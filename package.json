@@ -1,13 +1,15 @@
 {
-  "description": "A frontend for Home Assistant using the Polymer framework",
+  "description": "A Frontend for the magic mirror module MMM-HomeAssistantFrontend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/home-assistant/home-assistant-polymer"
+    "url": "https://github.com/creatvty/frontend"
   },
-  "name": "home-assistant-frontend",
-  "version": "1.0.0",
+  "name": "mm-home-assistant-frontend",
+  "version": "0.0.1",
   "scripts": {
     "build": "script/build_frontend",
+    "clean": "rm -rf hass_frontend",
+    "prepublishOnly": "yarn run clean && yarn run build",
     "lint:eslint": "eslint \"**/src/**/*.{js,ts,html}\" --ignore-path .gitignore",
     "format:eslint": "eslint \"**/src/**/*.{js,ts,html}\" --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/src/**/*.{js,ts,json,css,md}\" --check",
@@ -18,7 +20,10 @@
     "format": "yarn run format:eslint && yarn run format:prettier",
     "test": "instant-mocha --webpack-config ./test/webpack.config.js --require ./test/setup.js \"test/**/*.ts\""
   },
-  "author": "Paulus Schoutsen <Paulus@PaulusSchoutsen.nl> (http://paulusschoutsen.nl)",
+  "files": [
+    "hass_frontend"
+  ],
+  "author": "creatvty",
   "license": "Apache-2.0",
   "dependencies": {
     "@braintree/sanitize-url": "^5.0.2",
