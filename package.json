@@ -2,14 +2,16 @@
   "description": "A Frontend for the magic mirror module MMM-HomeAssistantFrontend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/creatvty/frontend"
+    "url": "git://github.com/creatvty/mm-home-assistant-frontend.git"
   },
-  "name": "mm-home-assistant-frontend",
-  "version": "0.0.1",
+  "name": "@creatvty/mm-home-assistant-frontend",
+  "version": "0.0.3",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "script/build_frontend",
     "clean": "rm -rf hass_frontend",
-    "prepublishOnly": "yarn run clean && yarn run build",
     "lint:eslint": "eslint \"**/src/**/*.{js,ts,html}\" --ignore-path .gitignore",
     "format:eslint": "eslint \"**/src/**/*.{js,ts,html}\" --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/src/**/*.{js,ts,json,css,md}\" --check",
